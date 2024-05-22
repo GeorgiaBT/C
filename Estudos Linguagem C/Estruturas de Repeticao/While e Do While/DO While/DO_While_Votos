@@ -1,0 +1,113 @@
+/*
+Exercicio: Faça um programa que simule a urna eletrônica.A tela a ser apresentada deverá ser da seguinte forma:
+As opções são:
+[1] Candidato Nelson Rodrigues
+[2] Candidato Carlos Luz
+[3]Candidato Neves Rocha
+[4] Nulo
+[5] Branco
+Entre com o seu voto:
+O programa deverá ler os votos dos eleitores e, quando for informado o número 0, apresentaras seguintes informações:
+a) O número de votos de cada candidato;
+b) A porcentagem de votos nulos;
+c) A porcentagem de votos brancos;
+d) O candidato vencedor
+
+Autor: Georgia Borges Teixeira
+
+*/
+#include <stdio.h>
+
+void imprimeMenu(){
+ 
+    printf("\nAS OPCOES SAO:");
+    printf("\n[1] Candidato Nelson Rodrigues");
+    printf("\n[2] Candidato Carlos Luz");
+    printf("\n[3] Candidato Neves Roch");
+    printf("\n[4] Nulo");
+    printf("\n[5] Branco");
+    printf("\nENTRE COM O SEU VOTO:");
+    
+}
+
+int main(){
+    
+    int numOpcao, votosNelson, votosCarlos, votosNeves, votosTotal, maiorVoto;
+    float votosNulos, votosBrancos;
+    
+    imprimeMenu();
+    scanf("%d", &numOpcao);
+    
+    do{
+        
+        switch(numOpcao){
+        
+            case 0:
+                numOpcao=0;
+                break;
+            
+            case 1:
+                votosNelson++;
+                break;
+            case 2:
+                votosCarlos++;
+                break;
+            case 3:
+                votosNeves++;
+                break;
+            case 4:
+                votosNulos++;
+                break;
+            case 5:
+                votosBrancos++;
+                break;
+            default:
+                printf("Opcao invalida! Tente novamente.");
+                imprimeMenu();
+                scanf("%d", &numOpcao);
+                
+                break;
+            
+        }
+        
+        imprimeMenu();
+        scanf("%d", &numOpcao);
+        
+    }while(numOpcao!=0);
+    
+    printf("\nVOTACAO ENCERRADA!");
+    
+    votosTotal = votosNelson+ votosCarlos+ votosNeves+ votosNulos+ votosBrancos;
+    
+    votosNulos = (votosNulos/votosTotal)*100;
+    
+    votosBrancos = (votosBrancos/votosTotal)*100;
+    
+    printf("\nTOTAL DE VOTOS: %d",votosTotal );
+    printf("\nVotos do Candidato Nelson Rodrigues: %d",votosNelson );
+    printf("\nVotos do Candidato Carlos Luz: %d",votosCarlos );
+    printf("\nVotos do Candidato Neves Roch: %d",votosNeves );
+    printf("\nVotos Nulos: %.2f%%",votosNulos );
+    printf("\nVotos Brancos: %.2f%%",votosBrancos );
+    
+    maiorVoto = votosNelson;
+    
+    if(votosCarlos > maiorVoto ){
+    
+        maiorVoto=votosCarlos;
+        printf("\nVENCEDOR: Candidato Carlos Luz - %d votos",maiorVoto );
+        
+    } else if(votosNeves > maiorVoto ){
+    
+        maiorVoto=votosNeves;
+        printf("\nVENCEDOR: Candidato Neves Roch - %d votos",maiorVoto );
+        
+    }else{
+    
+        printf("\nVENCEDOR: Candidato Nelson Rodrigues - %d votos",maiorVoto );
+        
+    }
+    
+    
+    return 0;
+}

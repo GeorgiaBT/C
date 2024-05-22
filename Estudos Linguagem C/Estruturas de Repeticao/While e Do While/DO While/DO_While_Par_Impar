@@ -1,0 +1,94 @@
+/*
+Exercicio: Escreva um programa que apresente na tela o seguinte menu:Caso o usuário escolha a opção 1, 
+ele deve digitar um número par para voltar ao menu.O mesmo deve ser feito na opção 2, mas para um número ímpar.
+Caso o usuário escolha a opção 3, o programa deve apresentar a quantidade de números paresdigitados na opção 1,
+ a quantidade de números ímpares digitados na opção 2 e encerrar oprograma
+
+Autor: Georgia Borges Teixeira
+
+*/
+
+#include <stdio.h>
+
+void imprimeMenu(){
+    printf("\n# MENU PRINCIPAL #");
+    printf("\n[1] Digitar um numero par");
+    printf("\n[2] Digitar um numero impar");
+    printf("\n[3] Sair");
+    printf("\nInsira o numero da funcao que deseja realizar:"); 
+    
+};
+
+int main(){
+    
+    int numOpcao, numDigitado, qtdImpares, qtdPares;
+    
+    imprimeMenu();
+    scanf("%d", &numOpcao);
+    
+    do{
+    
+        switch(numOpcao){
+        
+            case 1:
+                
+                printf("Digite um numero par: ");
+                scanf("%d", &numDigitado);
+                
+                if(numDigitado%2==0){
+                    
+                    imprimeMenu();
+                    scanf("%d", &numOpcao);
+                    qtdPares++;
+                    
+                }else{
+                    printf("Digite um numero par: ");
+                    scanf("%d", &numDigitado);
+                    
+                }
+            
+                break;
+            case 2:
+                
+                printf("Digite um numero impar: ");
+                scanf("%d", &numDigitado);
+                
+                if(numDigitado%2==0){
+                
+                    printf("Digite um numero impar: ");
+                    scanf("%d", &numDigitado);
+                
+                }else{
+                    imprimeMenu();
+                    scanf("%d", &numOpcao);
+                    qtdImpares++;
+                
+                }
+                
+                break;
+
+            case 3:
+            
+                numOpcao=3;
+                break;
+                
+                
+            default:
+                printf("\nOpcao invalida!");
+                
+                imprimeMenu();
+                
+                scanf("%d", &numOpcao);
+                
+                break;
+            }
+            
+    }while(numOpcao!=3);
+    
+    printf("\nQuantidade de Numeros pares: %d", qtdPares);
+    printf("\nQuantidade de Numeros impares: %d", qtdImpares);
+    printf("\nPROGRAMA ENCERRADO!");
+    
+    
+    return 0;
+}

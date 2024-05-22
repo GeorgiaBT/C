@@ -1,0 +1,33 @@
+/*
+Exercicio: Escreva um programa que verifique a validade de uma senha formada por números
+ inteiros fornecida pelo usuário (a senha válida é o número 2024).Se a senha informada pelo usuário for inválida,
+  a mensagem "ACESSO NEGADO" deve sermostrado na tela e deve ser solicitada uma nova senha até que ela seja válida.
+  Caso contrário deve ser mostrado na tela a mensagem 
+ "ACESSO PERMITIDO" junto com um número de vezes que a senha foi informada.
+
+Autor: Georgia Borges Teixeira
+
+*/
+
+#include <stdio.h>
+
+int main (){
+	
+	int senhaValida, senhaInserida;
+	
+	senhaValida = 1234;
+	
+	printf("Digite a sua senha: ");
+	scanf("%d", &senhaInserida);
+	
+	while(senhaValida != senhaInserida){
+		
+		printf("ACESSO NEGADO! Digite a senha novamente: ");
+		scanf("%d", &senhaInserida);
+		
+	}
+	
+	printf("ACESSO PERMITIDO!");
+	
+	return 0;
+}

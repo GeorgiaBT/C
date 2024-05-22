@@ -1,0 +1,32 @@
+/*
+Exercicio: Faça um programa em C que leia a idade de um grupo de pessoas 
+até ler o valor 0 (zero),calcule e apresente quantas são maiores de 18 anos.
+
+Autor: Georgia Borges Teixeira
+
+*/
+
+#include <stdio.h>
+
+int main(){
+ 
+    int idade, maior18;
+    
+    do
+        {
+        
+        printf("Insira a idade: ");
+        scanf("%d", &idade);
+        
+        if (idade>=18){
+        
+        maior18++;
+        }
+        
+    }while(idade!=0);
+    
+    printf("%d pessoas sao maiores de 18 anos.", maior18);
+    
+    
+    return 0;
+}

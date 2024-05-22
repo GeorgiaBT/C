@@ -1,0 +1,55 @@
+/*
+Exercicio:  Faça um programa que leia a idade de um número indeterminado de pessoas, sendo que aidade 0 (zero) 
+indica o fim da leitura e não deve ser considerada. A seguir calcule e apresente:
+• o número de pessoas;
+• a idade média do grupo;
+• a menor idade e a maior idade.
+
+Autor: Georgia Borges Teixeira
+
+*/
+
+#include <stdio.h>
+
+int main (){
+	
+	int idade, numPessoas, menor, maior;
+	float media, somaIdades;
+
+	printf("Digite sua idade: ");
+	scanf("%d", & idade);
+
+	maior =idade;
+	menor = idade;
+	
+	while(idade!=0){
+		
+		numPessoas++;
+		somaIdades+= idade;
+		
+		if(idade> maior){
+			
+			maior = idade;
+			
+		}
+		
+		if (idade<menor){
+			
+			menor = idade;
+		}
+		
+		printf("Digite sua idade: ");
+		scanf("%d", & idade);
+			
+	}
+	
+	media = somaIdades/numPessoas;
+	
+	printf("\nForam inseridas as idades de %d pessoas", numPessoas);
+	printf("\nA media das idades e igual a %.2f", media);
+	printf("\nA menor idade registrada foi de %d", menor);
+	printf("\nA maior idade registrada foi de %d", maior);
+	
+	
+	return 0;
+}

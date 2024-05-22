@@ -1,0 +1,130 @@
+/*
+
+Exercicio: Faça um programa que funcione como uma calculadora de dois números inteiros,
+ exibindo aseguinte tela para o usuário:
+ # MENU PRINCIPAL #
+ [1] Soma
+ [2] Subtração
+ [3] Divisão
+ [4] Multiplicação
+ [5] Sair
+ • Se as opções 1, 2, 3 ou 4 forem escolhidas,
+ executar a operação indicada, exibindo o resultadona tela.
+ • Se a opção 5 for escolhida, encerrar a execução do programa.
+ • Se for lido uma opção diferente de 1, 2, 3, 4, ou 5, indicar escolha inválida e voltar para o menu
+
+Autor: Georgia Borges Teixeira
+
+*/
+
+#include <stdio.h>
+
+void menu(){
+
+	printf("\n# MENU #");
+	printf("\n[1] Soma");
+	printf("\n[2] Subtracao");
+	printf("\n[3] Multiplicacao");
+	printf("\n[4] Divisao");
+	printf("\n[5] Sair");
+	printf("\nEscolha uma opcao do menu: ");
+	
+}
+
+
+int main(){
+	
+	int opcao, num1 , num2;
+	float resultado;
+	
+	menu();
+	
+	scanf("%d", &opcao);
+		
+		
+	do{
+	
+		
+		if(opcao==5){
+			
+			printf("\nPROGRAMA ENCERRADO!\n");
+			
+		}else{
+			
+			
+				
+			printf("Digite o primeiro numero da operacao: ");
+			scanf("%d", &num1);
+				
+			printf("Digite o segundo numero da operacao: ");
+			scanf("%d", &num2);
+			
+			
+			switch (opcao){
+				
+				case 1: 
+				
+					printf("\n# SOMA #\n");
+					
+					resultado = num1 + num2;
+					
+					printf("%d + %d = %.0f\n", num1, num2, resultado);
+					
+					opcao=0;
+				
+					break;
+				
+				case 2: 
+				
+					printf("\n# SUBTRACAO #\n");
+				
+					resultado = num1 - num2;
+					
+					printf("%d - %d = %.0f\n", num1, num2, resultado);
+				
+					opcao=0;
+				
+					break;
+					
+				case 3: 
+				
+					printf("\n# MULTIPLICACAO #\n");
+					
+					resultado = num1 * num2;
+					
+					printf("%d x %d = %.0f\n", num1, num2, resultado);
+				
+					opcao=0;
+				
+					break;
+					
+				case 4: 
+				
+					printf("\n# DIVISAO #\n");
+					
+					resultado = (float)num1 / num2;
+					
+					printf("%d / %d = %.2f\n", num1, num2, resultado);
+				
+					opcao=0;
+				
+					break;
+					
+				default: 
+				
+				
+					printf("Opcao invalida! Tente novamente.");
+					menu();
+					scanf("%d", &opcao);
+					
+				
+					break;
+							
+			}	
+			
+		}
+	}while(opcao!=0);
+
+
+	return 0;
+}

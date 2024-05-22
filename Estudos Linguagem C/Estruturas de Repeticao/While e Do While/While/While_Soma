@@ -1,0 +1,35 @@
+/*
+Exercicio: Escreva um algoritmo em pseudocódigo que realize a soma dos números fornecidos pelousuário até que o 
+número lido seja igual a zero. Ao final, mostre o resultado da soma.Em seguida, transcreva para a lingu
+
+
+Autor: Georgia Borges Teixeira
+
+*/
+
+
+
+#include <stdio.h>
+
+int main(){
+	
+	int numero, soma;
+	
+	printf("Digite um numero: ");
+	scanf("%d", &numero);
+	
+	
+	while(numero!=0){
+		
+		soma += numero;
+		
+		printf("\nDigite um numero: ");
+		scanf("%d", &numero);
+		
+
+	}
+	
+	printf("Soma: %d", soma);
+	
+	return 0;
+}

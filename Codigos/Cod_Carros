@@ -1,0 +1,83 @@
+/*
+Autor: Geórgia Borges Teixeira
+*/
+
+#include <stdio.h>
+
+int main(){
+    
+    
+    float precoFabrica, comissaoRevendedor, valorImpostos, descontoIdade, valorRevenda, valorFinal;
+    int idadeComprador;
+    
+    printf("Qual é o preço de fábrica do veículo? ");
+    scanf("%f", &precoFabrica);
+    
+    printf("\nQual é a idade do comprador? ");
+    scanf("%d", &idadeComprador);
+    
+    if (idadeComprador < 18 || idadeComprador>100 ){
+    
+        printf("\nNão foi possível validar os dados.");
+    
+    }else{
+    
+        if(precoFabrica < 0){
+    
+            printf("\nNão foi possível validar os dados.");
+    
+        }else{
+    
+            if(precoFabrica < 12000){
+    
+                comissaoRevendedor = (precoFabrica*5)/100;
+                valorImpostos = 0;
+    
+            }else if(precoFabrica <= 25000){
+    
+                comissaoRevendedor = (precoFabrica*10)/100;
+                valorImpostos = (precoFabrica*15)/100;
+    
+            }else{
+    
+                comissaoRevendedor = (precoFabrica*15)/100;
+                valorImpostos = (precoFabrica*20)/100;
+                
+            }
+    
+        valorRevenda = precoFabrica + valorImpostos + comissaoRevendedor;
+    
+            if(idadeComprador <30){
+            
+                descontoIdade = 0;
+            
+            }else if(idadeComprador <50){
+            
+                descontoIdade = 1500;
+            
+            }else if(idadeComprador <=70){
+            
+                descontoIdade = 3000;
+            
+            }else{
+            
+                descontoIdade = 0;
+            
+            }
+        
+             valorFinal = valorRevenda - descontoIdade;
+    
+            printf("Comissão do revendedor: %.2f", comissaoRevendedor);
+            printf("\nValor dos impostos: %.2f", valorImpostos);
+            printf("\nValor do desconto por idade: %.2f", descontoIdade);
+            printf("\nValor do veículo para revenda: %.2f", valorRevenda);
+            printf("\nValor final para o cliente: %.2f", valorFinal);
+            
+        }
+    
+    }
+    
+    
+    
+    return 0;
+}

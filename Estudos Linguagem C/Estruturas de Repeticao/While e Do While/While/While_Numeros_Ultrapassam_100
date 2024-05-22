@@ -1,0 +1,27 @@
+/*
+Exercicio:  Escreva um programa que forneça quantos números devem existir em sequência a partir do 1(1, 2, 3, 4,...) 
+para que a sua soma ultrapasse o valor 100.Considerar o mínimo possível de número.
+
+Autor: Georgia Borges Teixeira
+
+*/
+
+#include <stdio.h>
+
+int main (){
+	
+	int numero, soma, qtdnumeros;
+	
+	while(soma<=100){
+		
+		numero++;
+		soma += numero;
+		qtdnumeros++;
+		
+	}
+	
+	printf("Quantidade minima de numeros a partir de 1 que somados ultrapassam 100: %d", qtdnumeros);
+	
+	
+	return 0;
+}

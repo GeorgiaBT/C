@@ -1,0 +1,97 @@
+/*
+Exercicio: Escreva um programa que apresente o seguinte menu:Se as opções 1, 2, 3 ou 4 forem escolhidas,
+ mostrar na tela o nome da opção (Inserir, Excluir,Consultar, Listar).Se a opção 5 for escolhida, encerrar a execução do programa.
+
+Autor: Georgia Borges Teixeira
+
+*/
+#include <stdio.h>
+int main(){
+    
+    int numDigitado;
+    
+    printf("\n# MENU PRINCIPAL #");
+    printf("\n[1] INSERIR");
+    printf("\n[2] EXCLUIR");
+    printf("\n[3] CONSULTAR");
+    printf("\n[4] LISTAR");
+    printf("\n[5] SAIR");
+    printf("\nInsira o numero da funcao que deseja realizar:");
+    scanf("%d", &numDigitado);
+    
+    do{
+    
+        switch(numDigitado){
+        
+        case 1:
+            printf("\nINSERIR");
+            
+            printf("\n\n# MENU PRINCIPAL #");
+            printf("\n[1] INSERIR");
+            printf("\n[2] EXCLUIR");
+            printf("\n[3] CONSULTAR");
+            printf("\n[4] LISTAR");
+            printf("\n[5] SAIR");
+            printf("\nInsira o numero da funcao que deseja realizar:");
+            scanf("%d", &numDigitado);
+            
+            break;
+        case 2:
+            printf("\nEXCLUIR");
+            
+            printf("\n\n# MENU PRINCIPAL #");
+            printf("\n[1] INSERIR");
+            printf("\n[2] EXCLUIR");
+            printf("\n[3] CONSULTAR");
+            printf("\n[4] LISTAR");
+            printf("\n[5] SAIR");
+            printf("\nInsira o numero da funcao que deseja realizar:");
+            scanf("%d", &numDigitado);
+            break;
+        case 3:
+            printf("\nCONSULTAR");
+            
+            printf("\n\n# MENU PRINCIPAL #");
+            printf("\n[1] INSERIR");
+            printf("\n[2] EXCLUIR");
+            printf("\n[3] CONSULTAR");
+            printf("\n[4] LISTAR");
+            printf("\n[5] SAIR");
+            printf("\nInsira o numero da funcao que deseja realizar:");
+            scanf("%d", &numDigitado);
+            break;
+        
+        case 4:
+            printf("\nLISTAR");
+            
+            printf("\n\n# MENU PRINCIPAL #");
+            printf("\n[1] INSERIR");
+            printf("\n[2] EXCLUIR");
+            printf("\n[3] CONSULTAR");
+            printf("\n[4] LISTAR");
+            printf("\n[5] SAIR");
+            printf("\nInsira o numero da funcao que deseja realizar:");
+            scanf("%d", &numDigitado);
+            break;
+        
+        default:
+            printf("\nNumero invalido!");
+            
+            printf("\n# MENU PRINCIPAL #");
+            printf("\n[1] INSERIR");
+            printf("\n[2] EXCLUIR");
+            printf("\n[3] CONSULTAR");
+            printf("\n[4] LISTAR");
+            printf("\n[5] SAIR");
+            printf("\nInsira o numero da funcao que deseja realizar:");
+            scanf("%d", &numDigitado);
+            break;
+        
+        }
+        
+    }while(numDigitado!=5);
+    
+    printf("\nPROGRAMA ENCERRADO!");
+    
+    return 0;
+}

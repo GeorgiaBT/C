@@ -1,0 +1,45 @@
+/*
+Exercicio: Escreva um algoritmo em pseudocódigo que leia a distancia em Km e a quantidade de litros
+de gasolina consumidos por um carro em um percurso, calcule o consumo em Km/l e apresenteuma mensagem de acordo com a tabela
+Em seguida, transcreva para a linguagem C.
+
+Autor: Georgia Borgs Teixeira
+
+*/
+#include <stdio.h>
+int main(){
+ 
+    float km, litros, consumo;
+    
+    printf("Quantos quilometros o carro percorreu?");
+    scanf("%f", &km);
+    
+    printf("Quantos litros de gasolina o carro consumiu?");
+    scanf("%f", &litros);
+    
+    consumo = km/litros;
+    
+    if (litros != 0){
+    
+        if (consumo < 8){
+        
+            printf("Venda o carro!");
+        
+        }else if(consumo >14){
+        
+            printf("Super economico!");
+        
+        }else{
+        
+            printf("Economico!");
+        
+        }
+        
+    }else{
+        
+        printf("Impossivel dividir por 0!");
+    
+    }
+    
+    return 0;
+}
